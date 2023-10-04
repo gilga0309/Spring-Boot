@@ -79,13 +79,12 @@ jobs:
       # CodeDeploy에게 배포 명령을 내린다.
       - name: Code Deploy
         run: > 
-          aws deploy create-deployment 
-          --application-name $CODE_DEPLOY_APP_NAME
-          --deployment-config-name CodeDeployDefault.AllAtOnce
-          --deployment-group-name $CODE_DEPLOY_DEPLOYMENT_GROUP_NAME
-          --s3-location bucket=$BUCKET_NAME,bundleType=zip,key=deploy/$PROJECT_NAME.
-
+          aws deploy create-deployment
         # CodeDeploy 애플리케이션 이름
+          --application-name $CODE_DEPLOY_APP_NAME
         # 배포 방식인데 기본값을 사용
+          --deployment-config-name CodeDeployDefault.AllAtOnce
         # CodeDeploy 배포 그룹 이름
+          --deployment-group-name $CODE_DEPLOY_DEPLOYMENT_GROUP_NAME
         # 버킷 이름, 키 값, 번들타입
+          --s3-location bucket=$BUCKET_NAME,bundleType=zip,key=deploy/$PROJECT_NAME.
