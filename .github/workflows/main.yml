@@ -7,7 +7,7 @@ env:
   # 프로젝트 이름
   PROJECT_NAME: spring_boot_product_project
   # S3버킷
-  BUCKET_NAME: gitgubaction-aws-bucket 
+  BUCKET_NAME: githubaction-aws-bucket
   # 어플리케이션
   CODE_DEPLOY_APP_NAME: aws-codedeploy-cicd 
   # 배포그룹
