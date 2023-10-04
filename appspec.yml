@@ -2,17 +2,28 @@ version: 0.0
 os: linux
 
 files: #배포파일 설정
-  - source: / #인스턴스에 복사 할 디렉토리 경로
-    destination: /home/ubuntu/ #인스턴스에 파일이 복사되는 위치
-    overwrite: yes #복사할 위치에 파일이 있는 경우 대체
-permissions: #files 색션에서 복사한 파일에 대한 권한 설정
-  - object: / #권한이 지정되는 파일 또는 디렉토리
-    pattern: "**" #매칭되는 패턴에만 권한 부여
-    owner: ubuntu #object의 소유자
-    group: ubuntu #object의 그룹 이름
-    #mode: 755
-hooks: #배포 이후 수행할 스크립트 설정
+  #인스턴스에 복사 할 디렉토리 경로
+  - source: /
+    #인스턴스에 파일이 복사되는 위치
+    destination: /home/ubuntu/
+    #복사할 위치에 파일이 있는 경우 대체
+    overwrite: yes
+#files 색션에서 복사한 파일에 대한 권한 설정
+permissions:
+  #권한이 지정되는 파일 또는 디렉토리
+  - object: /
+    #매칭되는 패턴에만 권한 부여
+    pattern: "**"
+    #object의 소유자
+    owner: ubuntu
+    #object의 그룹 이름
+    group: ubuntu
+#배포 이후 수행할 스크립트 설정
+hooks:
   AfterInstall:
-    - location: deploy.sh #hooks에서 실행할 스크립트 위치
-      timeout: 60 #최대 하용 시간 timeout
-      runas: root #스크립트를 실행하는 사용자
+    #hooks에서 실행할 스크립트 위치
+    - location: deploy.sh
+      #최대 하용 시간 timeout
+      timeout: 60
+      #스크립트를 실행하는 사용자
+      runas: root
