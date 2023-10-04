@@ -11,9 +11,9 @@ env:
   # 어플리케이션
   CODE_DEPLOY_APP_NAME: aws-codedeploy-cicd 
   # 배포그룹
-  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: aws-deploy-instance
+  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: aws-codedeploy-group
 
-# Controls when the workflow will run 
+# Controls when the workflow will run
 # 해당 workflow가 언제 실행될 것인지에 대한 트리거를 지정
 # 릴리즈 발생 시 작동
 on:
