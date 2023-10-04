@@ -77,6 +77,10 @@ jobs:
         run: aws s3 cp $PROJECT_NAME.zip s3://$BUCKET_NAME/deploy/$PROJECT_NAME.zip --region ap-northeast-2
 
       # CodeDeploy에게 배포 명령을 내린다.
+      # CodeDeploy 애플리케이션 이름
+      # 배포 방식인데 기본값을 사용
+      # CodeDeploy 배포 그룹 이름
+      # 버킷 이름, 키 값, 번들타입
       - name: Code Deploy
         run: > 
           aws deploy create-deployment 
@@ -84,7 +88,3 @@ jobs:
           --deployment-config-name CodeDeployDefault.AllAtOnce
           --deployment-group-name $CODE_DEPLOY_DEPLOYMENT_GROUP_NAME
           --s3-location bucket=$BUCKET_NAME,bundleType=zip,key=deploy/$PROJECT_NAME.
-        # CodeDeploy 애플리케이션 이름
-        # 배포 방식인데 기본값을 사용
-        # CodeDeploy 배포 그룹 이름
-        # 버킷 이름, 키 값, 번들타입
