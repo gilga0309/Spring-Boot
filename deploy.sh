@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 APP_NAME=product-docker
-REPOSITORY=/home/ubuntu/
+REPOSITORY=/home/ubuntu
 
 echo "> Check the currently running container"
 CONTAINER_ID=$(docker ps -aqf "name=$APP_NAME")
