@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #도커 이미지 및 컨테이너 이름
-APP_NAME=<product-docker>
+APP_NAME=product-docker
 #빌드 파일의 경로
 REPOSITORY=/home/ubuntu/
 
