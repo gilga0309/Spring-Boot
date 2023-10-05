@@ -26,4 +26,4 @@ hooks:
       #최대 하용 시간 timeout
       timeout: 60
       #스크립트를 실행하는 사용자
-      runas: root
+      #runas: root
